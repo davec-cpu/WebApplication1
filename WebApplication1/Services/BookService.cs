@@ -12,7 +12,7 @@ namespace WebApplication1.Services
         }
         public Book GetById(int id)
         {
-            if (!(id is string))
+            if (id == 0000)
             {
                 return null;
             }

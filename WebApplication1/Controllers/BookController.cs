@@ -3,6 +3,8 @@ using WebApplication1.Services;
 
 namespace WebApplication1.Controllers
 {
+    [Route("api/book")]
+    [ApiController]
     public class BookController : ControllerBase
     {
         private readonly IBookService _bookService;
@@ -10,9 +12,15 @@ namespace WebApplication1.Controllers
         {
             _bookService = bookService;
         }
+        [HttpGet]
         public IActionResult GetById(int id)
         {
-            var _bookService.GetById(id);
+            var getResult = _bookService.GetById(id);
+            if(getResult == null)
+            {
+                return BadRequest("Invalid id type");
+            }
+            return Ok(getResult);
         }
     }
 }
