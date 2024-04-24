@@ -7,7 +7,7 @@ namespace WebApplication1.Repositories
         public Book GetById(int id)
         {
             return new Book
-            {
+            { 
                 Id = 1,
                 Author = "Pham Ngoc Nhat",
                 Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
